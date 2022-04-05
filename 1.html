@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        let b = document.querySelectorAll(".box");
+
+        //let arr = [23, 45, "hello", "bye"];
+
+
+        b[0].onclick = function () {
+            b[0].style.background = 'red';
+        }
+        b[4].onclick = function () {
+            b[4].style.background = 'gray';
+        }
+    </script>
+</body>
+</html>

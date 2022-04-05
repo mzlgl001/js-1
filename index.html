@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute; 	
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			transition:1s;
+		}
+		.winner{
+			background-image: url(1.jpg);
+			background-size: 100% 100%;
+			display: none;
+			height:940px;
+			width:1920px;
+		}
+	</style>
+</head>
+<body>	
+
+	<div class="box" style="">
+
+	<button class="btn btn-success button">Увеличить горох</button>
+		
+		<h1 style="position: absolute; left: 300px; top: 30px; color:white;
+		font-size:70px;" class="score">0</h1>
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 250px; left:600px; ">		
+		<img class="shooter" src="peashooter.png"  style="top: 350px; left:600px;">	
+		<img class="shooter" src="peashooter.png"  style="top: 450px; left:600px;">	
+		<img class="shooter" src="peashooter.png"  style="top: 550px; left:600px;">
+		<img class="shooter" src="peashooter.png"  style="top: 650px; left:600px;">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 220px; left:1400px;">
+		<img class="zombies" src="zombie2.png" style="top: 320px; left:1400px;">
+		<img class="zombies" src="zombie2.png" style="top: 420px; left:1400px;">
+		<img class="zombies" src="zombie4.png" style="top: 520px; left:1400px;">
+		<img class="zombies" src="zombie4.png" style="top: 620px; left:1400px;">
+	</div>
+	<div class="winner"></div>
+<script>
+	let shooter_elem = document.querySelectorAll(".shooter");
+	let btn = document.querySelector(".button")
+	let peas = document.querySelectorAll(".shooter")
+
+	let zombies_elem = document.querySelectorAll(".zombies");
+	let move_left1 = 1400
+	let move_left2 = 1400
+	let move_left3 = 1400
+	let move_left4 = 1400
+	let move_left5 = 1400
+
+	let score = 0;
+
+
+
+	zombies_elem[0].onclick = function () {
+		move_left1 = move_left1 - 100;
+		zombies_elem[0].style.left = move_left1 + "px";
+		if(move_left1 == 600){
+			alert('дед');
+			shooter_elem[0].style.display = 'none';
+			score = score + 1;
+			document.querySelector(".score").innerHTML = score;
+		}
+		if(score == 5){
+			alert('xarosh')
+			document.querySelector('.zombies').style.display = 'none';
+			document.querySelector('.tex').style.display = 'none';
+			document.querySelector('.winner').style.display = 'block';
+		}
+	}
+
+
+	zombies_elem[1].onclick = function () {
+		move_left2 = move_left2 - 100;
+		zombies_elem[1].style.left = move_left2 + "px";
+		if(move_left2 == 600){
+			alert('дед');
+			shooter_elem[1].style.display = 'none';
+			score = score + 1;
+			document.querySelector(".score").innerHTML = score;
+		}
+		if(score == 2){
+			alert('Мутация')
+			document.querySelector('.zombies').src = zombi;
+		}
+		if(score == 5){
+			alert('xarosh')
+			document.querySelector('.zombies').style.display = 'none';
+			document.querySelector('.tex').style.display = 'none';
+		}
+	}
+	zombies_elem[2].onclick = function () {
+		move_left3 = move_left3 - 100;
+		zombies_elem[2].style.left = move_left3 + "px";
+		if(move_left3 == 600){
+			alert('дед');
+			shooter_elem[2].style.display = 'none';
+			score = score + 1;
+			document.querySelector(".score").innerHTML = score;
+		}
+		if(score == 5){
+			alert('xarosh')
+			document.querySelector('.zombies').style.display = 'none';
+			document.querySelector('.tex').style.display = 'none';
+		}
+	}
+	zombies_elem[3].onclick = function () {
+		move_left4 = move_left4 - 100;
+		zombies_elem[3].style.left = move_left4 + "px";
+		if(move_left4 == 600){
+			alert('дед');
+			shooter_elem[3].style.display = 'none';
+			score = score + 1;
+			document.querySelector(".score").innerHTML = score;
+		}
+		if(score == 5){
+			alert('xarosh')
+			document.querySelector('.zombies').style.display = 'none';
+			document.querySelector('.tex').style.display = 'none';
+		}
+	}
+	zombies_elem[4].onclick = function () {
+		move_left5 = move_left5 - 100;
+		zombies_elem[4].style.left = move_left5 + "px";
+		if(move_left5 == 600){
+			alert('дед');
+			shooter_elem[4].style.display = 'none';
+			score = score + 1;
+			document.querySelector(".score").innerHTML = score;
+		}
+		if(score == 5){
+			alert('xarosh')
+			document.querySelector('.zombies').style.display = 'none';
+			document.querySelector('.tex').style.display = 'none';
+		}
+	}
+	btn.onclick = function () {
+
+
+
+			for(let i=0; i<5; i=i+1){
+				//alert(i);
+				peas[i].src = "peashooter2.png";
+				console.log(peas[i])
+			}
+		}
+
+
+
+
+
+</script>
+</body>
+</html>
